@@ -3,8 +3,6 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
-
-
 # User-specific files
 *.rsuser
 *.suo
@@ -210,9 +208,6 @@ PublishScripts/
 # NuGet v3's project.json files produces more ignorable files
 *.nuget.props
 *.nuget.targets
-
-# ignore nuget in top level folder
-!BDSA.TEMPLATES.*.nupkg
 
 # Microsoft Azure Build Output
 csx/
