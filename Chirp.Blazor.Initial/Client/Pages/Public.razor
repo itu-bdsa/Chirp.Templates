@@ -1,0 +1,48 @@
+﻿@page "/"
+@using Chirp.Blazor.Initial.Shared
+@inject HttpClient Http
+
+<PageTitle>Chirp!</PageTitle>
+
+
+@if (cheeps == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div>
+        <h2> Public Timeline </h2>
+
+        @if (cheeps.Count != 0)
+        {
+            <ul id="messagelist" class="cheeps">
+                @foreach (var cheep in cheeps)
+                {
+                    <li>
+                        <p>
+                            <strong>
+                                <a href="/@cheep.Author">@cheep.Author</a>
+                            </strong>
+                            @cheep.Message
+                            <small>&mdash; @cheep.Timestamp</small>
+                        </p>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <em>There are no cheeps so far.</em>
+        }
+    </div>
+}
+
+@code {
+    private List<Cheep>? cheeps;
+
+    protected override async Task OnInitializedAsync()
+    {
+        cheeps = await Http.GetFromJsonAsync<List<Cheep>>("cheeps");
+    }
+}
