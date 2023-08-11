@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Helge Pfeiffer",
+    "classifications": [ "Web", "Blazor", "WASM" ],
+    "identity": "Chirp.Blazor.Template",
+    "name": "Chirp Blazor Template",
+    "description": "A Blazor template for the BDSA course at ITU of Copenhagen. This template will be used to make a Blazor application that can be used to create and manage Chirps.",
+    "shortName": "chirp-blazor",
+    "sourceName": "Chirp.Blazor.Initial",
+    "tags": {
+        "language": "C#",
+        "type": "solution"
+    },
+    "preferNameDirectory": true
+}
