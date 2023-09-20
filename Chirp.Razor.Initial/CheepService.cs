@@ -1,6 +1,12 @@
 public record CheepViewModel(string Author, string Message, string Timestamp);
 
-public class CheepService
+public interface ICheepService
+{
+    public List<CheepViewModel> GetCheeps();
+    public List<CheepViewModel> GetCheepsFromAuthor(string author);
+}
+
+public class CheepService : ICheepService
 {
     // These would normally be loaded from a database for example
     private static readonly List<CheepViewModel> _cheeps = new()
